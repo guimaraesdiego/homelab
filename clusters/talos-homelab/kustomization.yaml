@@ -1,16 +1,24 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - apps/monitoring
-  - apps/dashboard
+  # --- Repositórios Helm ---
   - flux/helmrepositories.yaml
   - flux/rancher-lpp-repo.yaml
   - ingress/metallb/helmrepo.yaml
+  - ingress/traefik/helmrepo.yaml
+
+  # --- Armazenamento ---
+  - storage/local-path/helmrelease.yaml
+
+  # --- MetalLB (deve vir antes dos IPAddressPool e Traefik) ---
   - ingress/metallb/helmrelease.yaml
   - ingress/metallb/pool.yaml
-  - ingress/traefik/helmrepo.yaml
+
+  # --- Traefik (usa IPs do MetalLB) ---
   - ingress/traefik/helmrelease.yaml
   - ingress/ingress-grafana.yaml
   - ingress/ingress-dashboard.yaml
-  - storage/local-path/helmrelease.yaml
-  #- monitoring/kube-prometheus-stack.yaml
+
+  # --- Aplicações ---
+  - apps/monitoring
+  - apps/dashboard
