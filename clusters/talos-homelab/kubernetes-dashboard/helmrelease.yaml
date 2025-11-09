@@ -8,7 +8,6 @@ spec:
   chart:
     spec:
       chart: kubernetes-dashboard
-      version: 7.10.0   # ✅ versão válida
       sourceRef:
         kind: HelmRepository
         name: kubernetes-dashboard
