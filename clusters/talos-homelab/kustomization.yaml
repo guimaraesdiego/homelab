@@ -12,4 +12,6 @@ resources:
   - ingress/traefik/helmrelease.yaml
   - ingress/ingress-grafana.yaml
   - ingress/ingress-dashboard.yaml
+  - flux/rancher-lpp-repo.yaml
+  - storage/local-path/helmrelease.yaml
   #- monitoring/kube-prometheus-stack.yaml
