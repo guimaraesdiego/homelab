@@ -13,4 +13,17 @@ spec:
         kind: HelmRepository
         name: metallb
         namespace: flux-system
-  # o CRD e control plane sobem; o pool vai no arquivo abaixo
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  values:
+    addressPools:
+      - name: homelab-pool
+        protocol: layer2
+        addresses:
+          - 192.168.86.240-192.168.86.250
+    l2Advertisements:
+      - name: homelab-l2
+        ipAddressPools:
+          - homelab-pool
