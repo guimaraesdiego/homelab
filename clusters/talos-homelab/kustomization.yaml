@@ -5,4 +5,11 @@ resources:
   - apps/dashboard
   - flux/helmrepositories.yaml
   - storage/local-path/helmrelease.yaml
+  - ingress/metallb/helmrepo.yaml
+  - ingress/metallb/helmrelease.yaml
+  - ingress/metallb/pool.yaml
+  - ingress/traefik/helmrepo.yaml
+  - ingress/traefik/helmrelease.yaml
+  - ingress/ingress-grafana.yaml
+  - ingress/ingress-dashboard.yaml
   #- monitoring/kube-prometheus-stack.yaml
