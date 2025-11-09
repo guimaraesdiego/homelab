@@ -5,5 +5,5 @@ resources:
   - apps/dashboard
   - flux/helmrepositories.yaml
   - storage/local-path/helmrelease.yaml
-  - monitoring/kube-prometheus-stack.yaml
+  #- monitoring/kube-prometheus-stack.yaml
   - kubernetes-dashboard/helmrelease.yaml
